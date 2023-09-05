@@ -25,7 +25,7 @@ const DishRow = ({ id, title, description, price, imgUrl }) => {
 
   return (
     <>
-      <TouchableOpacity
+      <View
         onPress={() => setIsPressed(!isPressed)}
         className="p-4 bg-white border-t-2 border-gray-100"
       >
@@ -42,26 +42,25 @@ const DishRow = ({ id, title, description, price, imgUrl }) => {
             />
           </View>
         </View>
-      </TouchableOpacity>
-      {isPressed && (
-        <View className="bg-white px-2">
-          <View className="flex-row space-x-2 items-center pb-3">
-            <TouchableOpacity
-              disabled={!items.length}
-              onPress={removeItemFromBasket}
-            >
-              <MinusCircleIcon
-                size={40}
-                color={items.length ? "#00CCBB" : "gray"}
-              />
-            </TouchableOpacity>
-            <Text>{items.length}</Text>
-            <TouchableOpacity onPress={addItemToBasket}>
-              <PlusCircleIcon size={40} color="#00CCBB" />
-            </TouchableOpacity>
-          </View>
+      </View>
+
+      <View className="bg-white px-2">
+        <View className="flex-row space-x-2 items-center pb-3">
+          <TouchableOpacity
+            disabled={!items.length}
+            onPress={removeItemFromBasket}
+          >
+            <MinusCircleIcon
+              size={40}
+              color={items.length ? "#00CCBB" : "gray"}
+            />
+          </TouchableOpacity>
+          <Text>{items.length}</Text>
+          <TouchableOpacity onPress={addItemToBasket}>
+            <PlusCircleIcon size={40} color="#00CCBB" />
+          </TouchableOpacity>
         </View>
-      )}
+      </View>
     </>
   );
 };

@@ -5,6 +5,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import RestaurantScreen from "./screens/RestaurantScreen";
 import { Provider } from "react-redux";
 import { store } from "./store";
+import BasketScreen from "./screens/BasketScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -19,6 +20,11 @@ export default function App() {
               name="Restaurant"
               component={RestaurantScreen}
               options={({ route }) => ({ title: route.params.title })}
+            />
+            <Stack.Screen
+              name="Basket"
+              component={BasketScreen}
+              options={{ presentation: "modal" }}
             />
           </Stack.Navigator>
         </Provider>
