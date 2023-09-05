@@ -12,6 +12,8 @@ const BasketBanner = () => {
   const basketTotalPrice = useSelector(selectBasketTotalPrice);
   const items = useSelector(selectBasketItems);
 
+  if (!items.length) return null;
+
   return (
     <View className="absolute bottom-10 w-full z-50">
       <TouchableOpacity

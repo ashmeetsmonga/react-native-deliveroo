@@ -1,5 +1,5 @@
 import { View, Text, ScrollView, Image, TouchableOpacity } from "react-native";
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import {
   ChevronRightIcon,
@@ -10,6 +10,8 @@ import { QuestionMarkCircleIcon } from "react-native-heroicons/outline";
 import DishRow from "../components/DishRow";
 import { urlFor } from "../lib/sanity";
 import BasketBanner from "../components/BasketBanner";
+import { useDispatch } from "react-redux";
+import { setRestaurant } from "../slices/restaurantSlice";
 
 const RestaurantScreen = () => {
   const route = useRoute();
@@ -25,6 +27,25 @@ const RestaurantScreen = () => {
     long,
     lat,
   } = route.params;
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(
+      setRestaurant({
+        id,
+        imgUrl,
+        title,
+        rating,
+        genre,
+        address,
+        short_description,
+        dishes,
+        long,
+        lat,
+      })
+    );
+  }, []);
 
   return (
     <>
