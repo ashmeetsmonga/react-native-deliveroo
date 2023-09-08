@@ -33,7 +33,7 @@ const HomeScreen = () => {
   return (
     <SafeAreaView className="bg-white pt-5">
       {/* Header */}
-      <View className="flex-row pb-3 items-center gap-2 mx-4">
+      <View className="flex-row pb-3 items-center space-x-2 mx-4">
         <Image
           source={{ uri: "https://links.papareact.com/wru" }}
           className="h-10 w-10 bg-gray-300 p-4 rounded-full"
@@ -49,11 +49,11 @@ const HomeScreen = () => {
       </View>
 
       {/* Search */}
-      <View className="flex-row items-center gap-2 pb-2 mx-4">
+      <View className="flex-row items-center space-x-2 pb-2 mx-4">
         <View className="flex-row space-x-2 flex-1 bg-gray-200 p-3 rounded">
           <MagnifyingGlassIcon size={30} color="gray" />
           <TextInput
-            className="text-lg"
+            style={{ padding: 2, fontSize: 17 }}
             placeholder="Restaurants and Cuisines"
             keyboardType="default"
           />
