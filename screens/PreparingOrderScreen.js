@@ -1,8 +1,6 @@
-import { View, Text } from "react-native";
 import React, { useEffect } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import * as Animatable from "react-native-animatable";
-import * as Progress from "react-native-progress";
 import { useNavigation } from "@react-navigation/native";
 
 const PreparingOrderScreen = () => {
@@ -10,7 +8,7 @@ const PreparingOrderScreen = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      navigation.navigate("Home");
+      navigation.navigate("Delivery");
     }, 4000);
   }, []);
 
